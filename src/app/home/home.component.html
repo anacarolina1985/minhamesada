@@ -1,0 +1,69 @@
+<div class="back full">
+  <div class="header"><img src="assets/img/logo.jpeg">
+    <h1 class="bv">Bem Vindo!</h1>
+  </div>
+  <div class="formulario">
+    <div>
+      <mat-form-field name="nomePai">
+        <label>Nome</label>
+        <input matInput type="text" [(ngModel)]="formulario.nome">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <label>Email</label>
+        <input matInput type="text" [(ngModel)]="formulario.email" email>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <label>Telefone</label>
+        <input matInput type="text" [(ngModel)]="formulario.telefone" mask="(XX) XXXXX-XXXX">
+      </mat-form-field>
+    </div>
+    <div class="filhos">
+      <h2>Filhos</h2>
+      <div>
+        <mat-form-field>
+          <label>Nome</label>
+          <input matInput type="text" [(ngModel)]="formFilho.nome">
+        </mat-form-field>
+        <mat-form-field>
+          <label>idade</label>
+          <input matInput type="text" [(ngModel)]="formFilho.idade">
+        </mat-form-field>
+        <mat-form-field>
+          <label>Mesada</label>
+          <input matInput type="text" [(ngModel)]="formFilho.valorMesada">
+        </mat-form-field>
+        <mat-form-field>
+          <label>Telefone</label>
+          <input matInput type="text" [(ngModel)]="formFilho.telefone">
+        </mat-form-field>
+        <mat-form-field>
+          <label>Email</label>
+          <input matInput type="text" [(ngModel)]="formFilho.email" email>
+        </mat-form-field>
+        <button mat-button class="buttonPaiParaFilho" (click)="adicionarFilho()">Adicionar</button>
+      </div>
+      <table cols="1" class="back">
+        <thead>
+          <th>Nome</th>
+          <th>Idade</th>
+          <th>Mesada</th>
+          <th>Telefone</th>
+          <th>Email</th>
+        </thead>
+        <tr *ngFor="let filho of formulario.filhos">
+          <td>{{filho.nome}}</td>
+          <td>{{filho.idade}}</td>
+          <td>{{filho.valorMesada}}</td>
+          <td>{{filho.telefone}}</td>
+          <td>{{filho.email}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="botoes">
+      <button mat-button class="buttonPaiParaFilho" (click)="enviarForm()">Enviar Cadastro</button>
+    </div>
+  </div>
